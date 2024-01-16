@@ -8,11 +8,21 @@ The project focuses on learning optimized Partial Differential Equation (PDE) mo
 Two denoising models were employed in the project, with the linear model applied first, followed by the non-linear Perona-Malik model. The performance results on the test image were compared, guiding the project to the next phase of the analysis. Subsequently, a learning model based on nonlinear cross-diffusion was introduced and transformed into a trainable architecture using backpropagation techniques. This optimization process resulted in enhanced denoising and deblurring performance while ensuring stability throughout the learning procedure. The trainable non-linear reaction diffusion (TNRD) model was implemented to adaptively switch between image smoothing and sharpening. Parameter refinement employed both greedy and joint training schemes, and the optimization of the filter size achieved a balance between computational efficiency and model performance.
 
 
+## Linear Model
+write here
+![Image](images/Picture2.png)
 
+![Image](images/Picture3.png)
+## Prerona-Malik Model
+write here
+![Image](images/Picture4.png)
 
+![Image](images/Picture5.png)
+## Learning Model
 
+## TRAINABLE NON-LINEAR REACTION DIFFUSION (TNRD) Model
 
-
+## Refferences
 
 
 
