@@ -21,7 +21,11 @@ write here
 ![Image](images/Picture5.png)
 
 ## Learning Model
-
+- We propose to take a PDE based on a nonlinear cross-diffusion process and turn it into a learnable architecture in order to optimize the parameters of the model. In particular, we use a back-propagation technique in order to minimize a cost function related to the quality of the denoising and de blurring  process, while we ensure stability during the learning procedure.
+- This model reads a ground-truth image, degrades the image by first blurring or downscaling it, followed by an addition of random white Gaussian noise. Then it calls to RED in order to restore the image.  This  compares the input and output PSNR, shows and saves the  results. The suggested image-adaptive Laplacian-regularization functional  is minimized using the Steepest Descent methods.
+- The following are the degradation models that this model handles:        'Uniform Blur'  'Gaussian Blur'  'Downscale
+- So, to introduce our model into learning frame work we should firstly prepare the input/output pairs for a certain image processing task, and then exploit a loss minimization scheme to learn the model parameters Θt for each stage t of the diffusion process. We use training scheme joint training this minimizes problem with respect to the parameters in all stages. we also use greedy training scheme to pre-train our diffusion network stage-by-stage and to minimize the cost function
+- Our trained diffusion model can lead to explicit backward diffusion process, which sharpens image structures like edges and also can adaptively switch  image smoothing (forward diffusion)  which leads to an adaptive forward-and-backward diffusion process. 
 
 ## TRAINABLE NON-LINEAR REACTION DIFFUSION (TNRD) Model
 
