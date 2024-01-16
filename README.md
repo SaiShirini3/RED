@@ -3,8 +3,11 @@
 The project focuses on learning optimized Partial Differential Equation (PDE) models for image filtering. Using training techniques, we optimize parameters of a nonlinear diffusion model for image denoising. We further improve the output with efficient backpropagation techniques. The PDE model for noise removal involves parameters like noise level, threshold for distinguishing noise and edges, and diffusion function. Our primary aim is to learn these parameters using deep learning techniques like backpropagation and incorporate them into the PDE model to obtain a higher quality filtered image. We suggest transforming a PDE based on a nonlinear cross-diffusion process into a learnable structure to optimize the model parameters while ensuring stability throughout the learning process.
 
 ## Methodology
-
 ![Image](images/Picture1.png)
+
+Two denoising models were employed in the project, with the linear model applied first, followed by the non-linear Perona-Malik model. The performance results on the test image were compared, guiding the project to the next phase of the analysis. Subsequently, a learning model based on nonlinear cross-diffusion was introduced and transformed into a trainable architecture using backpropagation techniques. This optimization process resulted in enhanced denoising and deblurring performance while ensuring stability throughout the learning procedure. The trainable non-linear reaction diffusion (TNRD) model was implemented to adaptively switch between image smoothing and sharpening. Parameter refinement employed both greedy and joint training schemes, and the optimization of the filter size achieved a balance between computational efficiency and model performance.
+
+
 
 
 
