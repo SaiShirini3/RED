@@ -1,4 +1,4 @@
-# RED: version 1.0.0
+## About RED: version 1.0.0
 
 Demonstration of the image restoration experiments conducted in 
 Y. Romano, M. Elad, and P. Milanfar, "[The Little Engine that Could: 
@@ -9,11 +9,9 @@ SIAM Journal on Imaging Sciences, 10(4), 1804–1844, 2017
 ![Examples](images/examples.png?raw=true)
 
 The code was tested on Windows 7 and Windows 10, with Matlab R2016a.
-
 This is not an official Google product.
 
-
-## Quick start
+### Quick start
 
 1. Clone or download this repository.
 2. Download a lightweight version of TNRD denoising from
@@ -31,7 +29,7 @@ This is not an official Google product.
    to start a demo.
 
 
-## Third-party software components needed
+### Third-party software components needed
 
 The code uses an image denoising algorithm called TNRD, described in 
 Yunjin Chen, and Thomas Pock, "Trainable Nonlinear Reaction Diffusion: 
@@ -68,4 +66,7 @@ For more details, please refer to Weisheng Dong, Lei Zhang, Guangming Shi, and X
 The NCSR code is available in http://www4.comp.polyu.edu.hk/~cslzhang/NCSR.htm.
 Also, to have a fair comparison, we use a similar degradation process as done in NCSR.
 
-Good luck!
+## Objective
+
+The project focuses on learning optimized Partial Differential Equation (PDE) models for image filtering. Using training techniques, we optimize parameters of a nonlinear diffusion model for image denoising. We further improve the output with efficient backpropagation techniques. The PDE model for noise removal involves parameters like noise level, threshold for distinguishing noise and edges, and diffusion function. Our primary aim is to learn these parameters using deep learning techniques like backpropagation and incorporate them into the PDE model to obtain a higher quality filtered image. We suggest transforming a PDE based on a nonlinear cross-diffusion process into a learnable structure to optimize the model parameters while ensuring stability throughout the learning process.
+
