@@ -12,16 +12,20 @@ Two denoising models were employed in the project, with the linear model applied
 write here
 ![Image](images/Picture2.png)
 
-![Image](images/Picture3.png)
+![Image](images/Picture3.jpg)
+
 ## Prerona-Malik Model
 write here
 ![Image](images/Picture4.png)
 
 ![Image](images/Picture5.png)
+
 ## Learning Model
+
 
 ## TRAINABLE NON-LINEAR REACTION DIFFUSION (TNRD) Model
 
+![Image](images/Picture6.png) ![Image](images/Picture7.png)
 ## Refferences
 
 
