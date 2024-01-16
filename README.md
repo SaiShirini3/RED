@@ -28,8 +28,14 @@ write here
 - Our trained diffusion model can lead to explicit backward diffusion process, which sharpens image structures like edges and also can adaptively switch  image smoothing (forward diffusion)  which leads to an adaptive forward-and-backward diffusion process. 
 
 ## TRAINABLE NON-LINEAR REACTION DIFFUSION (TNRD) Model
-
+- Truncated concave functions with smaller values at the two tails this is a penalty function with a concave shape, This penalty function also encourages to sharpen the image edges. Concerning the learned penalty function 
+- We train the proposed diffusion network and observe its saturation behavior after certain stages We first greedily train T stages of our model with specific model capacity, then conduct a joint training to refine the parameters of the whole T stages.
+- In our model, the size of involved filters is a free parameter. In principle, we can exploit filters of any size, but in practice, we need to consider the trade-off between run time and accuracy. 
+- We increase the filter size to 7×7 and 9×9. We find that increasing the filter size from 5 × 5 to 7 × 7 brings a significant improvement of 0.14dB ( TNRD5 7×7 vs.TNRD5 5×5 ) . However, when we further increase the filter size to 9 × 9, the resulting TNRD5 9×9 only leads to a performance of 28.96dB (a slight improvement of 0.05dB relative to the TNRD5 7×7 model). We can conjecture that further increasing the filter size to 11 × 11 might bring negligible improvements. In practice, we prefer the TNRD5 7×7 model as it provides the best trade-off between performance and computation time.
+- 
+### Result of TNRD Model
 ![Image](images/Picture6.png) ![Image](images/Picture7.png)
+
 ## Refferences
 
 
