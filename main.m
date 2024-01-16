@@ -74,7 +74,7 @@ end
 
 %% read the original image
 
-file_name = 'starfish.tif';
+file_name = 'cameraman.jpg' ;
 
 fprintf('Reading %s image...', file_name);
 orig_im = imread(['./test_images/' file_name]);
@@ -311,4 +311,3 @@ imwrite(uint8(out_admm_im),['./results/est_admm_' file_name]);
 imwrite(uint8(out_sd_im),['./results/est_sd_' file_name]);
 
 fprintf(' Done.\n');
-
