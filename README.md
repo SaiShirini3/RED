@@ -1,3 +1,19 @@
+## Objective
+
+The project focuses on learning optimized Partial Differential Equation (PDE) models for image filtering. Using training techniques, we optimize parameters of a nonlinear diffusion model for image denoising. We further improve the output with efficient backpropagation techniques. The PDE model for noise removal involves parameters like noise level, threshold for distinguishing noise and edges, and diffusion function. Our primary aim is to learn these parameters using deep learning techniques like backpropagation and incorporate them into the PDE model to obtain a higher quality filtered image. We suggest transforming a PDE based on a nonlinear cross-diffusion process into a learnable structure to optimize the model parameters while ensuring stability throughout the learning process.
+
+## Methodology
+
+![Image](images/Picture1.png)
+
+
+
+
+
+
+
+
+-------------------------------------------------
 ## About RED: version 1.0.0
 
 Demonstration of the image restoration experiments conducted in 
@@ -65,8 +81,4 @@ For more details, please refer to Weisheng Dong, Lei Zhang, Guangming Shi, and X
 "Nonlocally Centralized Sparse Representation for Image Restoration", IEEE-TIP, 2013. 
 The NCSR code is available in http://www4.comp.polyu.edu.hk/~cslzhang/NCSR.htm.
 Also, to have a fair comparison, we use a similar degradation process as done in NCSR.
-
-## Objective
-
-The project focuses on learning optimized Partial Differential Equation (PDE) models for image filtering. Using training techniques, we optimize parameters of a nonlinear diffusion model for image denoising. We further improve the output with efficient backpropagation techniques. The PDE model for noise removal involves parameters like noise level, threshold for distinguishing noise and edges, and diffusion function. Our primary aim is to learn these parameters using deep learning techniques like backpropagation and incorporate them into the PDE model to obtain a higher quality filtered image. We suggest transforming a PDE based on a nonlinear cross-diffusion process into a learnable structure to optimize the model parameters while ensuring stability throughout the learning process.
 
