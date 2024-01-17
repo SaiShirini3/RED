@@ -15,7 +15,22 @@ write here
 ![Image](images/Picture3.jpg)
 
 ## Prerona-Malik Model
-write here
+We use heat equation for filtering the images
+Certainly! Here's a refined explanation of the algorithm for this model:
+
+Let's denote the current value of a point in the matrix U as U(i, j). The algorithm updates the value of each point in the matrix based on its neighboring points. The update is done using the following formula:
+
+\[ U = U + r \cdot (U_{\text{up}} + U_{\text{down}} + U_{\text{left}} + U_{\text{right}} - 4 \cdot U) \]
+
+Here's what each term represents:
+
+- \( U_{\text{up}} \): The value at the point above the current point (shifts down).
+- \( U_{\text{down}} \): The value at the point below the current point (shifts up).
+- \( U_{\text{left}} \): The value at the point to the left of the current point (shifts right).
+- \( U_{\text{right}} \): The value at the point to the right of the current point (shifts left).
+- \( r \): A constant factor that influences the update.
+
+In simpler terms, each point in the matrix is updated by taking into account the values of its neighboring points. The update is a weighted sum of the differences between the current point and its neighbors, with the weight determined by the constant factor \( r \). This process helps evolve the values of the matrix over iterations.
 ![Image](images/Picture4.png)
 
 ![Image](images/Picture5.png)
