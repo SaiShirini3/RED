@@ -9,28 +9,43 @@ Two denoising models were employed in the project, with the linear model applied
 
 
 ## Linear Model
-write here
+We use heat equation for filtering the images
+Algorithm:
+
+1. Initialize matrix U.
+2. Repeat for each iteration:Shift U in four directions:
+Upward: Upc = shift U up by one row.
+Downward: Umc = shift U down by one row.
+Leftward: Ucp = shift U left by one column.
+Rightward: Ucm = shift U right by one column.
+Update U with rewards and shifted values: U = U + r * (Upc + Umc + Ucp + Ucm - 4 * U)
 ![Image](images/Picture2.png)
 
 ![Image](images/Picture3.jpg)
 
+This is the output for the linear model at (t=0.1 s), here times plays a crucial role if time increases iterations increases and gets a smoother output
+The main drawback of linear diffusion filtering is that the smoothing process does not consider information regarding important image features such as edges, corners .It follows that equal quantity of smoothing to be implemented at each picture location. And when we increase t( increase iterations) the image get smother and smother at some point it just gets blurred
+
 ## Prerona-Malik Model
-We use heat equation for filtering the images
-Certainly! Here's a refined explanation of the algorithm for this model:
 
-Let's denote the current value of a point in the matrix U as U(i, j). The algorithm updates the value of each point in the matrix based on its neighboring points. The update is done using the following formula:
 
-\[ U = U + r \cdot (U_{\text{up}} + U_{\text{down}} + U_{\text{left}} + U_{\text{right}} - 4 \cdot U) \]
+Algorithm:
 
-Here's what each term represents:
+1. Initialize matrix U.
+2. Repeat for each iteration:
 
-- \( U_{\text{up}} \): The value at the point above the current point (shifts down).
-- \( U_{\text{down}} \): The value at the point below the current point (shifts up).
-- \( U_{\text{left}} \): The value at the point to the left of the current point (shifts right).
-- \( U_{\text{right}} \): The value at the point to the right of the current point (shifts left).
-- \( r \): A constant factor that influences the update.
+Shift U in four directions:
+Upward: Upc = shift U up by one row.
+Downward: Umc = shift U down by one row.
+Leftward: Ucp = shift U left by one column.
+Rightward: Ucm = shift U right by one column.
+Calculate gradient magnitude: gradU = sqrt(((Upc - Umc) / 2)^2 + ((Ucp - Ucm) / 2)^2)
+Calculate diffusion coefficient: temp = (gradU^2) / lambda C = 1 / (temp + 1)
+Update U with anisotropic diffusion: U = U + r * (( ((Cpc + C) / 2) * (Upc - U) + ((Ccp + C) / 2) * (Ucp - U) - ((Cmc + C) / 2) * (U - Umc) - ((Ccm + C) / 2) * (U - Ucm) ))
 
-In simpler terms, each point in the matrix is updated by taking into account the values of its neighboring points. The update is a weighted sum of the differences between the current point and its neighbors, with the weight determined by the constant factor \( r \). This process helps evolve the values of the matrix over iterations.
+
+The drawback of Perona-Malik model is that the sharp edges and fine details are not preserved well in the denoised image. But the sharp edges and fine details can be preserved well using appropriate edge stopping function
+
 ![Image](images/Picture4.png)
 
 ![Image](images/Picture5.png)
